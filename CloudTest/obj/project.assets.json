@@ -8314,11 +8314,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Developer\\dotNetCore\\CloudTest\\CloudTest\\CloudTest.csproj",
+      "projectUniqueName": "C:\\Developer\\dotNetCore\\apiCloudTest\\CloudTest\\CloudTest.csproj",
       "projectName": "CloudTest",
-      "projectPath": "C:\\Developer\\dotNetCore\\CloudTest\\CloudTest\\CloudTest.csproj",
+      "projectPath": "C:\\Developer\\dotNetCore\\apiCloudTest\\CloudTest\\CloudTest.csproj",
       "packagesPath": "C:\\Users\\Dan\\.nuget\\packages\\",
-      "outputPath": "C:\\Developer\\dotNetCore\\CloudTest\\CloudTest\\obj\\",
+      "outputPath": "C:\\Developer\\dotNetCore\\apiCloudTest\\CloudTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
