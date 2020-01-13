@@ -13,6 +13,10 @@ using Microsoft.Extensions.Logging;
 
 namespace CloudTest
 {
+    public class GlobalSettings
+    {
+        public static string pgConn { get; set; }
+    }
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -25,6 +29,9 @@ namespace CloudTest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           
+            GlobalSettings.pgConn = Configuration["pgConn"];
+
             services.AddControllers();
         }
 

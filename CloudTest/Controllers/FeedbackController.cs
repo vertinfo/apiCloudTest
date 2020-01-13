@@ -44,15 +44,16 @@ namespace CloudTest.Controllers
                 using (var jsonReader = new JsonTextReader(streamReader))
                 {
                     var json = await JObject.LoadAsync(jsonReader);
+                    json.ToObject<LessonEventLoopModel>();
                     Trace.TraceInformation($"Posting- {json}");
-                    LessonEventLoopModel model = json.Value<LessonEventLoopModel>();
+                    LessonEventLoopModel model = json.ToObject<LessonEventLoopModel>();
                     PgDb db = new PgDb();
                     db.insertFeedback(model);
                 }
             }
             catch (Exception e)
             {
-                // handle exception        
+                Trace.TraceInformation($"exception in feedback post: {e.Message}");   
             }
            
         }

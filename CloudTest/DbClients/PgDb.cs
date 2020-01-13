@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 using CloudTest.Models;
 using Npgsql;
 
+
 namespace CloudTest.DbClients
 {
     public class PgDb
     {
 
-        public IConfiguration Configuration { get; }
-        private string connection = "";
+        
+        private string connection = GlobalSettings.pgConn;
         public PgDb()
         {
-            connection = Configuration["pgConn"];
+            
         }
 
         public bool insertFeedback(LessonEventLoopModel model)
@@ -27,8 +28,8 @@ namespace CloudTest.DbClients
                 try
                 {
                     conn.Open();
-                    string query = $"Insert Into baseloop (user,lesson,lessonevent,device,feedback) values({model.UserId},{model.Lesson},{model.LessonEvent},{model.Device},{model.Feedback})";
-                    NpgsqlCommand cmd = new NpgsqlCommand(query);
+                    string query = $"Insert Into baseloop (uId,lesson,lessonevent,devicename,feedback) values('{model.uId}','{model.lesson}','{model.lessonEvent}','{model.devicename}','{model.feedback}')";
+                    NpgsqlCommand cmd = new NpgsqlCommand(query,conn);
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Row inserted");
                 }
